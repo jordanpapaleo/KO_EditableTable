@@ -1,0 +1,964 @@
+'{"HEADINGS": [{"VENDOR_FIELD_NAME": "Address", "CC_FIELD_LABEL": "Address", "CC_FIELD_TYPE": "", "CC_FIELD_LENGTH": 300, "CC_IS_REQUIRED": true, "CC_FIELD_ID": 1, "VENDOR_FIELD_KEY": "column3", "CC_PATTERN": ""}, {"VENDOR_FIELD_NAME": "", "CC_FIELD_LABEL": "Zip Code", "CC_FIELD_TYPE": "", "CC_FIELD_LENGTH": 5, "CC_IS_REQUIRED": true, "CC_FIELD_ID": 2, "VENDOR_FIELD_KEY": "", "CC_PATTERN": ""}, {"VENDOR_FIELD_NAME": "Sales Price", "CC_FIELD_LABEL": "Sale Price", "CC_FIELD_TYPE": "numeric", "CC_FIELD_LENGTH": 0, "CC_IS_REQUIRED": true, "CC_FIELD_ID": 5, "VENDOR_FIELD_KEY": "column11", "CC_PATTERN": ""}, {"VENDOR_FIELD_NAME": "", "CC_FIELD_LABEL": "Days On Market (DOM)", "CC_FIELD_TYPE": "numeric", "CC_FIELD_LENGTH": 0, "CC_IS_REQUIRED": false, "CC_FIELD_ID": 6, "VENDOR_FIELD_KEY": "", "CC_PATTERN": ""}, {"VENDOR_FIELD_NAME": "", "CC_FIELD_LABEL": "Year Built (Age)", "CC_FIELD_TYPE": "numeric", "CC_FIELD_LENGTH": 0, "CC_IS_REQUIRED": false, "CC_FIELD_ID": 7, "VENDOR_FIELD_KEY": "", "CC_PATTERN": ""}, {"VENDOR_FIELD_NAME": "Bldg SqFt", "CC_FIELD_LABEL": "Living Sq. Ft.", "CC_FIELD_TYPE": "numeric", "CC_FIELD_LENGTH": 0, "CC_IS_REQUIRED": false, "CC_FIELD_ID": 11, "VENDOR_FIELD_KEY": "column6", "CC_PATTERN": ""}, {"VENDOR_FIELD_NAME": "# Bdrms", "CC_FIELD_LABEL": "Bedrooms", "CC_FIELD_TYPE": "numeric", "CC_FIELD_LENGTH": 2, "CC_IS_REQUIRED": false, "CC_FIELD_ID": 12, "VENDOR_FIELD_KEY": "column7", "CC_PATTERN": ""}, {"VENDOR_FIELD_NAME": "Total # Baths", "CC_FIELD_LABEL": "Bathrooms", "CC_FIELD_TYPE": "numeric", "CC_FIELD_LENGTH": 2, "CC_IS_REQUIRED": false, "CC_FIELD_ID": 13, "VENDOR_FIELD_KEY": "column8", "CC_PATTERN": ""}, {"VENDOR_FIELD_NAME": "", "CC_FIELD_LABEL": "Half Baths", "CC_FIELD_TYPE": "numeric", "CC_FIELD_LENGTH": 2, "CC_IS_REQUIRED": false, "CC_FIELD_ID": 14, "VENDOR_FIELD_KEY": "", "CC_PATTERN": ""}, {"VENDOR_FIELD_NAME": "ML#", "CC_FIELD_LABEL": "MLS #", "CC_FIELD_TYPE": "", "CC_FIELD_LENGTH": 50, "CC_IS_REQUIRED": true, "CC_FIELD_ID": 19, "VENDOR_FIELD_KEY": "column2", "CC_PATTERN": ""}, {"VENDOR_FIELD_NAME": "", "CC_FIELD_LABEL": "Lot Size", "CC_FIELD_TYPE": "", "CC_FIELD_LENGTH": 0, "CC_IS_REQUIRED": false, "CC_FIELD_ID": 20, "VENDOR_FIELD_KEY": "", "CC_PATTERN": ""}, {"VENDOR_FIELD_NAME": "Closing Date", "CC_FIELD_LABEL": "Sold Date", "CC_FIELD_TYPE": "date", "CC_FIELD_LENGTH": 0, "CC_IS_REQUIRED": true, "CC_FIELD_ID": 22, "VENDOR_FIELD_KEY": "column5", "CC_PATTERN": ""}, {"VENDOR_FIELD_NAME": "Status", "CC_FIELD_ID": 0, "VENDOR_FIELD_KEY": "column1"}, {"VENDOR_FIELD_NAME": "List Date", "CC_FIELD_ID": 0, "VENDOR_FIELD_KEY": "column4"}, {"VENDOR_FIELD_NAME": "Garage Spcs", "CC_FIELD_ID": 0, "VENDOR_FIELD_KEY": "column9"}, {"VENDOR_FIELD_NAME": "List Price", "CC_FIELD_ID": 0, "VENDOR_FIELD_KEY": "column10"} ], "LISTINGS": [[{"CC_FIELD_ID": 1, "VENDOR_FIELD_KEY": "column3", "COLUMN": {"VALUE": "14435 COMPASS St A", "VALID": {"ERRCODE": "", "ISVALID": true } } }, {"CC_FIELD_ID": 2, "VENDOR_FIELD_KEY": "", "COLUMN": {"VALUE": "", "VALID": ""} }, {"CC_FIELD_ID": 5, "VENDOR_FIELD_KEY": "column11", "COLUMN": {"VALUE": 200000, "VALID": {"ERRCODE": "", "ISVALID": true } } }, {"CC_FIELD_ID": 6, "VENDOR_FIELD_KEY": "", "COLUMN": {"VALUE": "", "VALID": ""} }, {"CC_FIELD_ID": 7, "VENDOR_FIELD_KEY": "", "COLUMN": {"VALUE": "", "VALID": ""} }, {"CC_FIELD_ID": 11, "VENDOR_FIELD_KEY": "column6", "COLUMN": {"VALUE": 1730, "VALID": {"ERRCODE": "", "ISVALID": true } } }, {"CC_FIELD_ID": 12, "VENDOR_FIELD_KEY": "column7", "COLUMN": {"VALUE": 3, "VALID": {"ERRCODE": "", "ISVALID": true } } }, {"CC_FIELD_ID": 13, "VENDOR_FIELD_KEY": "column8", "COLUMN": {"VALUE": 2.5, "VALID": {"ERRCODE": "", "ISVALID": true } } }, {"CC_FIELD_ID": 14, "VENDOR_FIELD_KEY": "", "COLUMN": {"VALUE": "", "VALID": ""} }, {"CC_FIELD_ID": 19, "VENDOR_FIELD_KEY": "column2", "COLUMN": {"VALUE": 56901, "VALID": {"ERRCODE": "", "ISVALID": true } } }, {"CC_FIELD_ID": 20, "VENDOR_FIELD_KEY": "", "COLUMN": {"VALUE": "", "VALID": ""} }, {"CC_FIELD_ID": 22, "VENDOR_FIELD_KEY": "column5", "COLUMN": {"VALUE": "2/7/2007", "VALID": {"ERRCODE": "", "ISVALID": true } } }, {"CC_FIELD_ID": 0, "VENDOR_FIELD_KEY": "column1", "COLUMN": {"VALUE": "Closed", "VALID": {"ERRCODE": "", "ISVALID": true } } }, {"CC_FIELD_ID": 0, "VENDOR_FIELD_KEY": "column4", "COLUMN": {"VALUE": "7/5/2006", "VALID": {"ERRCODE": "", "ISVALID": true } } }, {"CC_FIELD_ID": 0, "VENDOR_FIELD_KEY": "column9", "COLUMN": {"VALUE": 2, "VALID": {"ERRCODE": "", "ISVALID": true } } }, {"CC_FIELD_ID": 0, "VENDOR_FIELD_KEY": "column10", "COLUMN": {"VALUE": 215000, "VALID": {"ERRCODE": "", "ISVALID": true } } } ], [{"CC_FIELD_ID": 1, "VENDOR_FIELD_KEY": "column3", "COLUMN": {"VALUE": "14202 Encantada #405 ##405", "VALID": {"ERRCODE": "", "ISVALID": true } } }, {"CC_FIELD_ID": 2, "VENDOR_FIELD_KEY": "", "COLUMN": {"VALUE": "", "VALID": ""} }, {"CC_FIELD_ID": 5, "VENDOR_FIELD_KEY": "column11", "COLUMN": {"VALUE": 224900, "VALID": {"ERRCODE": "", "ISVALID": true } } }, {"CC_FIELD_ID": 6, "VENDOR_FIELD_KEY": "", "COLUMN": {"VALUE": "", "VALID": ""} }, {"CC_FIELD_ID": 7, "VENDOR_FIELD_KEY": "", "COLUMN": {"VALUE": "", "VALID": ""} }, {"CC_FIELD_ID": 11, "VENDOR_FIELD_KEY": "column6", "COLUMN": {"VALUE": 1700, "VALID": {"ERRCODE": "", "ISVALID": true } } }, {"CC_FIELD_ID": 12, "VENDOR_FIELD_KEY": "column7", "COLUMN": {"VALUE": 3, "VALID": {"ERRCODE": "", "ISVALID": true } } }, {"CC_FIELD_ID": 13, "VENDOR_FIELD_KEY": "column8", "COLUMN": {"VALUE": 3.5, "VALID": {"ERRCODE": "", "ISVALID": true } } }, {"CC_FIELD_ID": 14, "VENDOR_FIELD_KEY": "", "COLUMN": {"VALUE": "", "VALID": ""} }, {"CC_FIELD_ID": 19, "VENDOR_FIELD_KEY": "column2", "COLUMN": {"VALUE": 46095, "VALID": {"ERRCODE": "", "ISVALID": true } } }, {"CC_FIELD_ID": 20, "VENDOR_FIELD_KEY": "", "COLUMN": {"VALUE": "", "VALID": ""} }, {"CC_FIELD_ID": 22, "VENDOR_FIELD_KEY": "column5", "COLUMN": {"VALUE": "4/24/2006", "VALID": {"ERRCODE": "", "ISVALID": true } } }, {"CC_FIELD_ID": 0, "VENDOR_FIELD_KEY": "column1", "COLUMN": {"VALUE": "Closed", "VALID": {"ERRCODE": "", "ISVALID": true } } }, {"CC_FIELD_ID": 0, "VENDOR_FIELD_KEY": "column4", "COLUMN": {"VALUE": "8/1/2005", "VALID": {"ERRCODE": "", "ISVALID": true } } }, {"CC_FIELD_ID": 0, "VENDOR_FIELD_KEY": "column9", "COLUMN": {"VALUE": 2, "VALID": {"ERRCODE": "", "ISVALID": true } } }, {"CC_FIELD_ID": 0, "VENDOR_FIELD_KEY": "column10", "COLUMN": {"VALUE": 225900, "VALID": {"ERRCODE": "", "ISVALID": true } } } ], [{"CC_FIELD_ID": 1, "VENDOR_FIELD_KEY": "column3", "COLUMN": {"VALUE": "14202 Encantada #206 ##206", "VALID": {"ERRCODE": "", "ISVALID": true } } }, {"CC_FIELD_ID": 2, "VENDOR_FIELD_KEY": "", "COLUMN": {"VALUE": "", "VALID": ""} }, {"CC_FIELD_ID": 5, "VENDOR_FIELD_KEY": "column11", "COLUMN": {"VALUE": 225000, "VALID": {"ERRCODE": "", "ISVALID": true } } }, {"CC_FIELD_ID": 6, "VENDOR_FIELD_KEY": "", "COLUMN": {"VALUE": "", "VALID": ""} }, {"CC_FIELD_ID": 7, "VENDOR_FIELD_KEY": "", "COLUMN": {"VALUE": "", "VALID": ""} }, {"CC_FIELD_ID": 11, "VENDOR_FIELD_KEY": "column6", "COLUMN": {"VALUE": 1700, "VALID": {"ERRCODE": "", "ISVALID": true } } }, {"CC_FIELD_ID": 12, "VENDOR_FIELD_KEY": "column7", "COLUMN": {"VALUE": 3, "VALID": {"ERRCODE": "", "ISVALID": true } } }, {"CC_FIELD_ID": 13, "VENDOR_FIELD_KEY": "column8", "COLUMN": {"VALUE": 3.5, "VALID": {"ERRCODE": "", "ISVALID": true } } }, {"CC_FIELD_ID": 14, "VENDOR_FIELD_KEY": "", "COLUMN": {"VALUE": "", "VALID": ""} }, {"CC_FIELD_ID": 19, "VENDOR_FIELD_KEY": "column2", "COLUMN": {"VALUE": 49175, "VALID": {"ERRCODE": "", "ISVALID": true } } }, {"CC_FIELD_ID": 20, "VENDOR_FIELD_KEY": "", "COLUMN": {"VALUE": "", "VALID": ""} }, {"CC_FIELD_ID": 22, "VENDOR_FIELD_KEY": "column5", "COLUMN": {"VALUE": "4/21/2006", "VALID": {"ERRCODE": "", "ISVALID": true } } }, {"CC_FIELD_ID": 0, "VENDOR_FIELD_KEY": "column1", "COLUMN": {"VALUE": "Closed", "VALID": {"ERRCODE": "", "ISVALID": true } } }, {"CC_FIELD_ID": 0, "VENDOR_FIELD_KEY": "column4", "COLUMN": {"VALUE": "11/14/2005", "VALID": {"ERRCODE": "", "ISVALID": true } } }, {"CC_FIELD_ID": 0, "VENDOR_FIELD_KEY": "column9", "COLUMN": {"VALUE": 2, "VALID": {"ERRCODE": "", "ISVALID": true } } }, {"CC_FIELD_ID": 0, "VENDOR_FIELD_KEY": "column10", "COLUMN": {"VALUE": 229900, "VALID": {"ERRCODE": "", "ISVALID": true } } } ], [{"CC_FIELD_ID": 1, "VENDOR_FIELD_KEY": "column3", "COLUMN": {"VALUE": "14202 Encantada #406 ##406", "VALID": {"ERRCODE": "", "ISVALID": true } } }, {"CC_FIELD_ID": 2, "VENDOR_FIELD_KEY": "", "COLUMN": {"VALUE": "", "VALID": ""} }, {"CC_FIELD_ID": 5, "VENDOR_FIELD_KEY": "column11", "COLUMN": {"VALUE": 229900, "VALID": {"ERRCODE": "", "ISVALID": true } } }, {"CC_FIELD_ID": 6, "VENDOR_FIELD_KEY": "", "COLUMN": {"VALUE": "", "VALID": ""} }, {"CC_FIELD_ID": 7, "VENDOR_FIELD_KEY": "", "COLUMN": {"VALUE": "", "VALID": ""} }, {"CC_FIELD_ID": 11, "VENDOR_FIELD_KEY": "column6", "COLUMN": {"VALUE": 1700, "VALID": {"ERRCODE": "", "ISVALID": true } } }, {"CC_FIELD_ID": 12, "VENDOR_FIELD_KEY": "column7", "COLUMN": {"VALUE": 3, "VALID": {"ERRCODE": "", "ISVALID": true } } }, {"CC_FIELD_ID": 13, "VENDOR_FIELD_KEY": "column8", "COLUMN": {"VALUE": 3.5, "VALID": {"ERRCODE": "", "ISVALID": true } } }, {"CC_FIELD_ID": 14, "VENDOR_FIELD_KEY": "", "COLUMN": {"VALUE": "", "VALID": ""} }, {"CC_FIELD_ID": 19, "VENDOR_FIELD_KEY": "column2", "COLUMN": {"VALUE": 46096, "VALID": {"ERRCODE": "", "ISVALID": true } } }, {"CC_FIELD_ID": 20, "VENDOR_FIELD_KEY": "", "COLUMN": {"VALUE": "", "VALID": ""} }, {"CC_FIELD_ID": 22, "VENDOR_FIELD_KEY": "column5", "COLUMN": {"VALUE": "5/10/2006", "VALID": {"ERRCODE": "", "ISVALID": true } } }, {"CC_FIELD_ID": 0, "VENDOR_FIELD_KEY": "column1", "COLUMN": {"VALUE": "Closed", "VALID": {"ERRCODE": "", "ISVALID": true } } }, {"CC_FIELD_ID": 0, "VENDOR_FIELD_KEY": "column4", "COLUMN": {"VALUE": "8/1/2005", "VALID": {"ERRCODE": "", "ISVALID": true } } }, {"CC_FIELD_ID": 0, "VENDOR_FIELD_KEY": "column9", "COLUMN": {"VALUE": 2, "VALID": {"ERRCODE": "", "ISVALID": true } } }, {"CC_FIELD_ID": 0, "VENDOR_FIELD_KEY": "column10", "COLUMN": {"VALUE": 229900, "VALID": {"ERRCODE": "", "ISVALID": true } } } ], [{"CC_FIELD_ID": 1, "VENDOR_FIELD_KEY": "column3", "COLUMN": {"VALUE": "14202 Encantada #304", "VALID": {"ERRCODE": "", "ISVALID": true } } }, {"CC_FIELD_ID": 2, "VENDOR_FIELD_KEY": "", "COLUMN": {"VALUE": "", "VALID": ""} }, {"CC_FIELD_ID": 5, "VENDOR_FIELD_KEY": "column11", "COLUMN": {"VALUE": 231000, "VALID": {"ERRCODE": "", "ISVALID": true } } }, {"CC_FIELD_ID": 6, "VENDOR_FIELD_KEY": "", "COLUMN": {"VALUE": "", "VALID": ""} }, {"CC_FIELD_ID": 7, "VENDOR_FIELD_KEY": "", "COLUMN": {"VALUE": "", "VALID": ""} }, {"CC_FIELD_ID": 11, "VENDOR_FIELD_KEY": "column6", "COLUMN": {"VALUE": 1700, "VALID": {"ERRCODE": "", "ISVALID": true } } }, {"CC_FIELD_ID": 12, "VENDOR_FIELD_KEY": "column7", "COLUMN": {"VALUE": 3, "VALID": {"ERRCODE": "", "ISVALID": true } } }, {"CC_FIELD_ID": 13, "VENDOR_FIELD_KEY": "column8", "COLUMN": {"VALUE": 3.5, "VALID": {"ERRCODE": "", "ISVALID": true } } }, {"CC_FIELD_ID": 14, "VENDOR_FIELD_KEY": "", "COLUMN": {"VALUE": "", "VALID": ""} }, {"CC_FIELD_ID": 19, "VENDOR_FIELD_KEY": "column2", "COLUMN": {"VALUE": 53256, "VALID": {"ERRCODE": "", "ISVALID": true } } }, {"CC_FIELD_ID": 20, "VENDOR_FIELD_KEY": "", "COLUMN": {"VALUE": "", "VALID": ""} }, {"CC_FIELD_ID": 22, "VENDOR_FIELD_KEY": "column5", "COLUMN": {"VALUE": "4/7/2006", "VALID": {"ERRCODE": "", "ISVALID": true } } }, {"CC_FIELD_ID": 0, "VENDOR_FIELD_KEY": "column1", "COLUMN": {"VALUE": "Closed", "VALID": {"ERRCODE": "", "ISVALID": true } } }, {"CC_FIELD_ID": 0, "VENDOR_FIELD_KEY": "column4", "COLUMN": {"VALUE": "4/7/2006", "VALID": {"ERRCODE": "", "ISVALID": true } } }, {"CC_FIELD_ID": 0, "VENDOR_FIELD_KEY": "column9", "COLUMN": {"VALUE": 2, "VALID": {"ERRCODE": "", "ISVALID": true } } }, {"CC_FIELD_ID": 0, "VENDOR_FIELD_KEY": "column10", "COLUMN": {"VALUE": 231000, "VALID": {"ERRCODE": "", "ISVALID": true}}}]]}'
+
+{
+  "HEADINGS": [
+    {
+      "VENDOR_FIELD_NAME": "Address",
+      "CC_FIELD_LABEL": "Address",
+      "CC_FIELD_TYPE": "",
+      "CC_FIELD_LENGTH": 300,
+      "CC_IS_REQUIRED": true,
+      "CC_FIELD_ID": 1,
+      "VENDOR_FIELD_KEY": "column3",
+      "CC_PATTERN": ""
+    },
+    {
+      "VENDOR_FIELD_NAME": "",
+      "CC_FIELD_LABEL": "Zip Code",
+      "CC_FIELD_TYPE": "",
+      "CC_FIELD_LENGTH": 5,
+      "CC_IS_REQUIRED": true,
+      "CC_FIELD_ID": 2,
+      "VENDOR_FIELD_KEY": "",
+      "CC_PATTERN": ""
+    },
+    {
+      "VENDOR_FIELD_NAME": "Sales Price",
+      "CC_FIELD_LABEL": "Sale Price",
+      "CC_FIELD_TYPE": "numeric",
+      "CC_FIELD_LENGTH": 0,
+      "CC_IS_REQUIRED": true,
+      "CC_FIELD_ID": 5,
+      "VENDOR_FIELD_KEY": "column11",
+      "CC_PATTERN": ""
+    },
+    {
+      "VENDOR_FIELD_NAME": "",
+      "CC_FIELD_LABEL": "Days On Market (DOM)",
+      "CC_FIELD_TYPE": "numeric",
+      "CC_FIELD_LENGTH": 0,
+      "CC_IS_REQUIRED": false,
+      "CC_FIELD_ID": 6,
+      "VENDOR_FIELD_KEY": "",
+      "CC_PATTERN": ""
+    },
+    {
+      "VENDOR_FIELD_NAME": "",
+      "CC_FIELD_LABEL": "Year Built (Age)",
+      "CC_FIELD_TYPE": "numeric",
+      "CC_FIELD_LENGTH": 0,
+      "CC_IS_REQUIRED": false,
+      "CC_FIELD_ID": 7,
+      "VENDOR_FIELD_KEY": "",
+      "CC_PATTERN": ""
+    },
+    {
+      "VENDOR_FIELD_NAME": "Bldg SqFt",
+      "CC_FIELD_LABEL": "Living Sq. Ft.",
+      "CC_FIELD_TYPE": "numeric",
+      "CC_FIELD_LENGTH": 0,
+      "CC_IS_REQUIRED": false,
+      "CC_FIELD_ID": 11,
+      "VENDOR_FIELD_KEY": "column6",
+      "CC_PATTERN": ""
+    },
+    {
+      "VENDOR_FIELD_NAME": "# Bdrms",
+      "CC_FIELD_LABEL": "Bedrooms",
+      "CC_FIELD_TYPE": "numeric",
+      "CC_FIELD_LENGTH": 2,
+      "CC_IS_REQUIRED": false,
+      "CC_FIELD_ID": 12,
+      "VENDOR_FIELD_KEY": "column7",
+      "CC_PATTERN": ""
+    },
+    {
+      "VENDOR_FIELD_NAME": "Total # Baths",
+      "CC_FIELD_LABEL": "Bathrooms",
+      "CC_FIELD_TYPE": "numeric",
+      "CC_FIELD_LENGTH": 2,
+      "CC_IS_REQUIRED": false,
+      "CC_FIELD_ID": 13,
+      "VENDOR_FIELD_KEY": "column8",
+      "CC_PATTERN": ""
+    },
+    {
+      "VENDOR_FIELD_NAME": "",
+      "CC_FIELD_LABEL": "Half Baths",
+      "CC_FIELD_TYPE": "numeric",
+      "CC_FIELD_LENGTH": 2,
+      "CC_IS_REQUIRED": false,
+      "CC_FIELD_ID": 14,
+      "VENDOR_FIELD_KEY": "",
+      "CC_PATTERN": ""
+    },
+    {
+      "VENDOR_FIELD_NAME": "ML#",
+      "CC_FIELD_LABEL": "MLS #",
+      "CC_FIELD_TYPE": "",
+      "CC_FIELD_LENGTH": 50,
+      "CC_IS_REQUIRED": true,
+      "CC_FIELD_ID": 19,
+      "VENDOR_FIELD_KEY": "column2",
+      "CC_PATTERN": ""
+    },
+    {
+      "VENDOR_FIELD_NAME": "",
+      "CC_FIELD_LABEL": "Lot Size",
+      "CC_FIELD_TYPE": "",
+      "CC_FIELD_LENGTH": 0,
+      "CC_IS_REQUIRED": false,
+      "CC_FIELD_ID": 20,
+      "VENDOR_FIELD_KEY": "",
+      "CC_PATTERN": ""
+    },
+    {
+      "VENDOR_FIELD_NAME": "Closing Date",
+      "CC_FIELD_LABEL": "Sold Date",
+      "CC_FIELD_TYPE": "date",
+      "CC_FIELD_LENGTH": 0,
+      "CC_IS_REQUIRED": true,
+      "CC_FIELD_ID": 22,
+      "VENDOR_FIELD_KEY": "column5",
+      "CC_PATTERN": ""
+    },
+    {
+      "VENDOR_FIELD_NAME": "Status",
+      "CC_FIELD_ID": 0,
+      "VENDOR_FIELD_KEY": "column1"
+    },
+    {
+      "VENDOR_FIELD_NAME": "List Date",
+      "CC_FIELD_ID": 0,
+      "VENDOR_FIELD_KEY": "column4"
+    },
+    {
+      "VENDOR_FIELD_NAME": "Garage Spcs",
+      "CC_FIELD_ID": 0,
+      "VENDOR_FIELD_KEY": "column9"
+    },
+    {
+      "VENDOR_FIELD_NAME": "List Price",
+      "CC_FIELD_ID": 0,
+      "VENDOR_FIELD_KEY": "column10"
+    }
+  ],
+  "LISTINGS": [
+    [
+      {
+        "CC_FIELD_ID": 1,
+        "VENDOR_FIELD_KEY": "column3",
+        "COLUMN": {
+          "VALUE": "14435 COMPASS St A",
+          "VALID": {
+            "ERRCODE": "",
+            "ISVALID": true
+          }
+        }
+      },
+      {
+        "CC_FIELD_ID": 2,
+        "VENDOR_FIELD_KEY": "",
+        "COLUMN": {
+          "VALUE": "",
+          "VALID": ""
+        }
+      },
+      {
+        "CC_FIELD_ID": 5,
+        "VENDOR_FIELD_KEY": "column11",
+        "COLUMN": {
+          "VALUE": 200000,
+          "VALID": {
+            "ERRCODE": "",
+            "ISVALID": true
+          }
+        }
+      },
+      {
+        "CC_FIELD_ID": 6,
+        "VENDOR_FIELD_KEY": "",
+        "COLUMN": {
+          "VALUE": "",
+          "VALID": ""
+        }
+      },
+      {
+        "CC_FIELD_ID": 7,
+        "VENDOR_FIELD_KEY": "",
+        "COLUMN": {
+          "VALUE": "",
+          "VALID": ""
+        }
+      },
+      {
+        "CC_FIELD_ID": 11,
+        "VENDOR_FIELD_KEY": "column6",
+        "COLUMN": {
+          "VALUE": 1730,
+          "VALID": {
+            "ERRCODE": "",
+            "ISVALID": true
+          }
+        }
+      },
+      {
+        "CC_FIELD_ID": 12,
+        "VENDOR_FIELD_KEY": "column7",
+        "COLUMN": {
+          "VALUE": 3,
+          "VALID": {
+            "ERRCODE": "",
+            "ISVALID": true
+          }
+        }
+      },
+      {
+        "CC_FIELD_ID": 13,
+        "VENDOR_FIELD_KEY": "column8",
+        "COLUMN": {
+          "VALUE": 2.5,
+          "VALID": {
+            "ERRCODE": "",
+            "ISVALID": true
+          }
+        }
+      },
+      {
+        "CC_FIELD_ID": 14,
+        "VENDOR_FIELD_KEY": "",
+        "COLUMN": {
+          "VALUE": "",
+          "VALID": ""
+        }
+      },
+      {
+        "CC_FIELD_ID": 19,
+        "VENDOR_FIELD_KEY": "column2",
+        "COLUMN": {
+          "VALUE": 56901,
+          "VALID": {
+            "ERRCODE": "",
+            "ISVALID": true
+          }
+        }
+      },
+      {
+        "CC_FIELD_ID": 20,
+        "VENDOR_FIELD_KEY": "",
+        "COLUMN": {
+          "VALUE": "",
+          "VALID": ""
+        }
+      },
+      {
+        "CC_FIELD_ID": 22,
+        "VENDOR_FIELD_KEY": "column5",
+        "COLUMN": {
+          "VALUE": "2/7/2007",
+          "VALID": {
+            "ERRCODE": "",
+            "ISVALID": true
+          }
+        }
+      },
+      {
+        "CC_FIELD_ID": 0,
+        "VENDOR_FIELD_KEY": "column1",
+        "COLUMN": {
+          "VALUE": "Closed",
+          "VALID": {
+            "ERRCODE": "",
+            "ISVALID": true
+          }
+        }
+      },
+      {
+        "CC_FIELD_ID": 0,
+        "VENDOR_FIELD_KEY": "column4",
+        "COLUMN": {
+          "VALUE": "7/5/2006",
+          "VALID": {
+            "ERRCODE": "",
+            "ISVALID": true
+          }
+        }
+      },
+      {
+        "CC_FIELD_ID": 0,
+        "VENDOR_FIELD_KEY": "column9",
+        "COLUMN": {
+          "VALUE": 2,
+          "VALID": {
+            "ERRCODE": "",
+            "ISVALID": true
+          }
+        }
+      },
+      {
+        "CC_FIELD_ID": 0,
+        "VENDOR_FIELD_KEY": "column10",
+        "COLUMN": {
+          "VALUE": 215000,
+          "VALID": {
+            "ERRCODE": "",
+            "ISVALID": true
+          }
+        }
+      }
+    ],
+    [
+      {
+        "CC_FIELD_ID": 1,
+        "VENDOR_FIELD_KEY": "column3",
+        "COLUMN": {
+          "VALUE": "14202 Encantada #405 ##405",
+          "VALID": {
+            "ERRCODE": "",
+            "ISVALID": true
+          }
+        }
+      },
+      {
+        "CC_FIELD_ID": 2,
+        "VENDOR_FIELD_KEY": "",
+        "COLUMN": {
+          "VALUE": "",
+          "VALID": ""
+        }
+      },
+      {
+        "CC_FIELD_ID": 5,
+        "VENDOR_FIELD_KEY": "column11",
+        "COLUMN": {
+          "VALUE": 224900,
+          "VALID": {
+            "ERRCODE": "",
+            "ISVALID": true
+          }
+        }
+      },
+      {
+        "CC_FIELD_ID": 6,
+        "VENDOR_FIELD_KEY": "",
+        "COLUMN": {
+          "VALUE": "",
+          "VALID": ""
+        }
+      },
+      {
+        "CC_FIELD_ID": 7,
+        "VENDOR_FIELD_KEY": "",
+        "COLUMN": {
+          "VALUE": "",
+          "VALID": ""
+        }
+      },
+      {
+        "CC_FIELD_ID": 11,
+        "VENDOR_FIELD_KEY": "column6",
+        "COLUMN": {
+          "VALUE": 1700,
+          "VALID": {
+            "ERRCODE": "",
+            "ISVALID": true
+          }
+        }
+      },
+      {
+        "CC_FIELD_ID": 12,
+        "VENDOR_FIELD_KEY": "column7",
+        "COLUMN": {
+          "VALUE": 3,
+          "VALID": {
+            "ERRCODE": "",
+            "ISVALID": true
+          }
+        }
+      },
+      {
+        "CC_FIELD_ID": 13,
+        "VENDOR_FIELD_KEY": "column8",
+        "COLUMN": {
+          "VALUE": 3.5,
+          "VALID": {
+            "ERRCODE": "",
+            "ISVALID": true
+          }
+        }
+      },
+      {
+        "CC_FIELD_ID": 14,
+        "VENDOR_FIELD_KEY": "",
+        "COLUMN": {
+          "VALUE": "",
+          "VALID": ""
+        }
+      },
+      {
+        "CC_FIELD_ID": 19,
+        "VENDOR_FIELD_KEY": "column2",
+        "COLUMN": {
+          "VALUE": 46095,
+          "VALID": {
+            "ERRCODE": "",
+            "ISVALID": true
+          }
+        }
+      },
+      {
+        "CC_FIELD_ID": 20,
+        "VENDOR_FIELD_KEY": "",
+        "COLUMN": {
+          "VALUE": "",
+          "VALID": ""
+        }
+      },
+      {
+        "CC_FIELD_ID": 22,
+        "VENDOR_FIELD_KEY": "column5",
+        "COLUMN": {
+          "VALUE": "4/24/2006",
+          "VALID": {
+            "ERRCODE": "",
+            "ISVALID": true
+          }
+        }
+      },
+      {
+        "CC_FIELD_ID": 0,
+        "VENDOR_FIELD_KEY": "column1",
+        "COLUMN": {
+          "VALUE": "Closed",
+          "VALID": {
+            "ERRCODE": "",
+            "ISVALID": true
+          }
+        }
+      },
+      {
+        "CC_FIELD_ID": 0,
+        "VENDOR_FIELD_KEY": "column4",
+        "COLUMN": {
+          "VALUE": "8/1/2005",
+          "VALID": {
+            "ERRCODE": "",
+            "ISVALID": true
+          }
+        }
+      },
+      {
+        "CC_FIELD_ID": 0,
+        "VENDOR_FIELD_KEY": "column9",
+        "COLUMN": {
+          "VALUE": 2,
+          "VALID": {
+            "ERRCODE": "",
+            "ISVALID": true
+          }
+        }
+      },
+      {
+        "CC_FIELD_ID": 0,
+        "VENDOR_FIELD_KEY": "column10",
+        "COLUMN": {
+          "VALUE": 225900,
+          "VALID": {
+            "ERRCODE": "",
+            "ISVALID": true
+          }
+        }
+      }
+    ],
+    [
+      {
+        "CC_FIELD_ID": 1,
+        "VENDOR_FIELD_KEY": "column3",
+        "COLUMN": {
+          "VALUE": "14202 Encantada #206 ##206",
+          "VALID": {
+            "ERRCODE": "",
+            "ISVALID": true
+          }
+        }
+      },
+      {
+        "CC_FIELD_ID": 2,
+        "VENDOR_FIELD_KEY": "",
+        "COLUMN": {
+          "VALUE": "",
+          "VALID": ""
+        }
+      },
+      {
+        "CC_FIELD_ID": 5,
+        "VENDOR_FIELD_KEY": "column11",
+        "COLUMN": {
+          "VALUE": 225000,
+          "VALID": {
+            "ERRCODE": "",
+            "ISVALID": true
+          }
+        }
+      },
+      {
+        "CC_FIELD_ID": 6,
+        "VENDOR_FIELD_KEY": "",
+        "COLUMN": {
+          "VALUE": "",
+          "VALID": ""
+        }
+      },
+      {
+        "CC_FIELD_ID": 7,
+        "VENDOR_FIELD_KEY": "",
+        "COLUMN": {
+          "VALUE": "",
+          "VALID": ""
+        }
+      },
+      {
+        "CC_FIELD_ID": 11,
+        "VENDOR_FIELD_KEY": "column6",
+        "COLUMN": {
+          "VALUE": 1700,
+          "VALID": {
+            "ERRCODE": "",
+            "ISVALID": true
+          }
+        }
+      },
+      {
+        "CC_FIELD_ID": 12,
+        "VENDOR_FIELD_KEY": "column7",
+        "COLUMN": {
+          "VALUE": 3,
+          "VALID": {
+            "ERRCODE": "",
+            "ISVALID": true
+          }
+        }
+      },
+      {
+        "CC_FIELD_ID": 13,
+        "VENDOR_FIELD_KEY": "column8",
+        "COLUMN": {
+          "VALUE": 3.5,
+          "VALID": {
+            "ERRCODE": "",
+            "ISVALID": true
+          }
+        }
+      },
+      {
+        "CC_FIELD_ID": 14,
+        "VENDOR_FIELD_KEY": "",
+        "COLUMN": {
+          "VALUE": "",
+          "VALID": ""
+        }
+      },
+      {
+        "CC_FIELD_ID": 19,
+        "VENDOR_FIELD_KEY": "column2",
+        "COLUMN": {
+          "VALUE": 49175,
+          "VALID": {
+            "ERRCODE": "",
+            "ISVALID": true
+          }
+        }
+      },
+      {
+        "CC_FIELD_ID": 20,
+        "VENDOR_FIELD_KEY": "",
+        "COLUMN": {
+          "VALUE": "",
+          "VALID": ""
+        }
+      },
+      {
+        "CC_FIELD_ID": 22,
+        "VENDOR_FIELD_KEY": "column5",
+        "COLUMN": {
+          "VALUE": "4/21/2006",
+          "VALID": {
+            "ERRCODE": "",
+            "ISVALID": true
+          }
+        }
+      },
+      {
+        "CC_FIELD_ID": 0,
+        "VENDOR_FIELD_KEY": "column1",
+        "COLUMN": {
+          "VALUE": "Closed",
+          "VALID": {
+            "ERRCODE": "",
+            "ISVALID": true
+          }
+        }
+      },
+      {
+        "CC_FIELD_ID": 0,
+        "VENDOR_FIELD_KEY": "column4",
+        "COLUMN": {
+          "VALUE": "11/14/2005",
+          "VALID": {
+            "ERRCODE": "",
+            "ISVALID": true
+          }
+        }
+      },
+      {
+        "CC_FIELD_ID": 0,
+        "VENDOR_FIELD_KEY": "column9",
+        "COLUMN": {
+          "VALUE": 2,
+          "VALID": {
+            "ERRCODE": "",
+            "ISVALID": true
+          }
+        }
+      },
+      {
+        "CC_FIELD_ID": 0,
+        "VENDOR_FIELD_KEY": "column10",
+        "COLUMN": {
+          "VALUE": 229900,
+          "VALID": {
+            "ERRCODE": "",
+            "ISVALID": true
+          }
+        }
+      }
+    ],
+    [
+      {
+        "CC_FIELD_ID": 1,
+        "VENDOR_FIELD_KEY": "column3",
+        "COLUMN": {
+          "VALUE": "14202 Encantada #406 ##406",
+          "VALID": {
+            "ERRCODE": "",
+            "ISVALID": true
+          }
+        }
+      },
+      {
+        "CC_FIELD_ID": 2,
+        "VENDOR_FIELD_KEY": "",
+        "COLUMN": {
+          "VALUE": "",
+          "VALID": ""
+        }
+      },
+      {
+        "CC_FIELD_ID": 5,
+        "VENDOR_FIELD_KEY": "column11",
+        "COLUMN": {
+          "VALUE": 229900,
+          "VALID": {
+            "ERRCODE": "",
+            "ISVALID": true
+          }
+        }
+      },
+      {
+        "CC_FIELD_ID": 6,
+        "VENDOR_FIELD_KEY": "",
+        "COLUMN": {
+          "VALUE": "",
+          "VALID": ""
+        }
+      },
+      {
+        "CC_FIELD_ID": 7,
+        "VENDOR_FIELD_KEY": "",
+        "COLUMN": {
+          "VALUE": "",
+          "VALID": ""
+        }
+      },
+      {
+        "CC_FIELD_ID": 11,
+        "VENDOR_FIELD_KEY": "column6",
+        "COLUMN": {
+          "VALUE": 1700,
+          "VALID": {
+            "ERRCODE": "",
+            "ISVALID": true
+          }
+        }
+      },
+      {
+        "CC_FIELD_ID": 12,
+        "VENDOR_FIELD_KEY": "column7",
+        "COLUMN": {
+          "VALUE": 3,
+          "VALID": {
+            "ERRCODE": "",
+            "ISVALID": true
+          }
+        }
+      },
+      {
+        "CC_FIELD_ID": 13,
+        "VENDOR_FIELD_KEY": "column8",
+        "COLUMN": {
+          "VALUE": 3.5,
+          "VALID": {
+            "ERRCODE": "",
+            "ISVALID": true
+          }
+        }
+      },
+      {
+        "CC_FIELD_ID": 14,
+        "VENDOR_FIELD_KEY": "",
+        "COLUMN": {
+          "VALUE": "",
+          "VALID": ""
+        }
+      },
+      {
+        "CC_FIELD_ID": 19,
+        "VENDOR_FIELD_KEY": "column2",
+        "COLUMN": {
+          "VALUE": 46096,
+          "VALID": {
+            "ERRCODE": "",
+            "ISVALID": true
+          }
+        }
+      },
+      {
+        "CC_FIELD_ID": 20,
+        "VENDOR_FIELD_KEY": "",
+        "COLUMN": {
+          "VALUE": "",
+          "VALID": ""
+        }
+      },
+      {
+        "CC_FIELD_ID": 22,
+        "VENDOR_FIELD_KEY": "column5",
+        "COLUMN": {
+          "VALUE": "5/10/2006",
+          "VALID": {
+            "ERRCODE": "",
+            "ISVALID": true
+          }
+        }
+      },
+      {
+        "CC_FIELD_ID": 0,
+        "VENDOR_FIELD_KEY": "column1",
+        "COLUMN": {
+          "VALUE": "Closed",
+          "VALID": {
+            "ERRCODE": "",
+            "ISVALID": true
+          }
+        }
+      },
+      {
+        "CC_FIELD_ID": 0,
+        "VENDOR_FIELD_KEY": "column4",
+        "COLUMN": {
+          "VALUE": "8/1/2005",
+          "VALID": {
+            "ERRCODE": "",
+            "ISVALID": true
+          }
+        }
+      },
+      {
+        "CC_FIELD_ID": 0,
+        "VENDOR_FIELD_KEY": "column9",
+        "COLUMN": {
+          "VALUE": 2,
+          "VALID": {
+            "ERRCODE": "",
+            "ISVALID": true
+          }
+        }
+      },
+      {
+        "CC_FIELD_ID": 0,
+        "VENDOR_FIELD_KEY": "column10",
+        "COLUMN": {
+          "VALUE": 229900,
+          "VALID": {
+            "ERRCODE": "",
+            "ISVALID": true
+          }
+        }
+      }
+    ],
+    [
+      {
+        "CC_FIELD_ID": 1,
+        "VENDOR_FIELD_KEY": "column3",
+        "COLUMN": {
+          "VALUE": "14202 Encantada #304",
+          "VALID": {
+            "ERRCODE": "",
+            "ISVALID": true
+          }
+        }
+      },
+      {
+        "CC_FIELD_ID": 2,
+        "VENDOR_FIELD_KEY": "",
+        "COLUMN": {
+          "VALUE": "",
+          "VALID": ""
+        }
+      },
+      {
+        "CC_FIELD_ID": 5,
+        "VENDOR_FIELD_KEY": "column11",
+        "COLUMN": {
+          "VALUE": 231000,
+          "VALID": {
+            "ERRCODE": "",
+            "ISVALID": true
+          }
+        }
+      },
+      {
+        "CC_FIELD_ID": 6,
+        "VENDOR_FIELD_KEY": "",
+        "COLUMN": {
+          "VALUE": "",
+          "VALID": ""
+        }
+      },
+      {
+        "CC_FIELD_ID": 7,
+        "VENDOR_FIELD_KEY": "",
+        "COLUMN": {
+          "VALUE": "",
+          "VALID": ""
+        }
+      },
+      {
+        "CC_FIELD_ID": 11,
+        "VENDOR_FIELD_KEY": "column6",
+        "COLUMN": {
+          "VALUE": 1700,
+          "VALID": {
+            "ERRCODE": "",
+            "ISVALID": true
+          }
+        }
+      },
+      {
+        "CC_FIELD_ID": 12,
+        "VENDOR_FIELD_KEY": "column7",
+        "COLUMN": {
+          "VALUE": 3,
+          "VALID": {
+            "ERRCODE": "",
+            "ISVALID": true
+          }
+        }
+      },
+      {
+        "CC_FIELD_ID": 13,
+        "VENDOR_FIELD_KEY": "column8",
+        "COLUMN": {
+          "VALUE": 3.5,
+          "VALID": {
+            "ERRCODE": "",
+            "ISVALID": true
+          }
+        }
+      },
+      {
+        "CC_FIELD_ID": 14,
+        "VENDOR_FIELD_KEY": "",
+        "COLUMN": {
+          "VALUE": "",
+          "VALID": ""
+        }
+      },
+      {
+        "CC_FIELD_ID": 19,
+        "VENDOR_FIELD_KEY": "column2",
+        "COLUMN": {
+          "VALUE": 53256,
+          "VALID": {
+            "ERRCODE": "",
+            "ISVALID": true
+          }
+        }
+      },
+      {
+        "CC_FIELD_ID": 20,
+        "VENDOR_FIELD_KEY": "",
+        "COLUMN": {
+          "VALUE": "",
+          "VALID": ""
+        }
+      },
+      {
+        "CC_FIELD_ID": 22,
+        "VENDOR_FIELD_KEY": "column5",
+        "COLUMN": {
+          "VALUE": "4/7/2006",
+          "VALID": {
+            "ERRCODE": "",
+            "ISVALID": true
+          }
+        }
+      },
+      {
+        "CC_FIELD_ID": 0,
+        "VENDOR_FIELD_KEY": "column1",
+        "COLUMN": {
+          "VALUE": "Closed",
+          "VALID": {
+            "ERRCODE": "",
+            "ISVALID": true
+          }
+        }
+      },
+      {
+        "CC_FIELD_ID": 0,
+        "VENDOR_FIELD_KEY": "column4",
+        "COLUMN": {
+          "VALUE": "4/7/2006",
+          "VALID": {
+            "ERRCODE": "",
+            "ISVALID": true
+          }
+        }
+      },
+      {
+        "CC_FIELD_ID": 0,
+        "VENDOR_FIELD_KEY": "column9",
+        "COLUMN": {
+          "VALUE": 2,
+          "VALID": {
+            "ERRCODE": "",
+            "ISVALID": true
+          }
+        }
+      },
+      {
+        "CC_FIELD_ID": 0,
+        "VENDOR_FIELD_KEY": "column10",
+        "COLUMN": {
+          "VALUE": 231000,
+          "VALID": {
+            "ERRCODE": "",
+            "ISVALID": true
+          }
+        }
+      }
+    ]
+  ]
+}
+

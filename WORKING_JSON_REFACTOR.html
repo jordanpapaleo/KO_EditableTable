@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta content="text/html;charset=utf-8" http-equiv="Content-Type">
+    <meta content="utf-8" http-equiv="encoding">
+    <title>Editable Table</title>
+    <style type="text/css">
+    	td input, th select {
+			width: 75px;
+		}
+		.error input {
+			background-color: #F0CED7;
+			border: 1px solid #F1918D;
+		}
+    </style>
+
+</head>
+
+<body>
+    <div id="mtr_editableTable">
+        <table class="displayTable" data-bind="visible: !isEditable()">
+        <!-- <table class="displayTable"> -->
+             <thead>
+                 <tr data-bind="foreach: headings">
+                      <th data-bind="text: acceptedHeading, attr: {'field-id': selectMenuIdVal}"></th>
+                 </tr>
+             </thead>
+             <tbody data-bind="foreach: {data: listings, as: 'listing'}">
+                 <tr data-bind="foreach: {data: listing, as: 'tableCell'}">
+                     <td>
+                     	<span data-bind="text: tableCell.VALUE, attr: {class: tableCell.VENDOR_FIELD_KEY, 'data-field-id': tableCell.CC_FIELD_ID}"></span>
+                     </td>
+                 </tr>
+             </tbody>
+        </table>
+
+        <table class="editTable" data-bind="visible: isEditable()">
+        <!-- <table class="editTable"> -->
+             <thead>
+                 <tr data-bind="foreach: {data: headings, as: 'heading'}">
+                     <th>
+						<select data-bind="foreach: $root.headings, value: heading.selectMenuTextVal, event: { change: selectionChanged }">
+						   <option data-bind="value: CC_FIELD_LABEL, text: CC_FIELD_LABEL, attr: {'field-id': CC_FIELD_ID}"></option>
+						</select>
+                     </th>
+                 </tr>
+             </thead>
+             <tbody data-bind="foreach: {data: listings, as: 'listing'}">
+                 <tr data-bind="foreach: {data: listing, as: 'tableCell'}">
+                     <td data-bind="css: { error: isError() }">
+                         <input data-bind="value: tableCell.VALUE" />
+                     </td>
+                 </tr>
+             </tbody>
+        </table>
+
+		<button data-bind="click: submit">Submit</button>
+		<button data-bind="click: switchMode, visible: !isEditable()">Edit</button>
+    </div>
+
+    <div id="scripts">
+		<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+		<script type="text/javascript" src="http://ajax.aspnetcdn.com/ajax/knockout/knockout-2.2.1.js"></script>
+		<script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/knockout.mapping/2.3.5/knockout.mapping.js"></script>
+		<script type="text/javascript">
+			$("document").ready(function () {
+				ko.applyBindings(new EditableTableVM());
+			});
+
+			var logit = function(blar) {
+				console.log(JSON.parse(ko.toJSON(blar)));
+			}
+
+			var Heading = function(data) {
+				var self = this;
+				var heading = ko.mapping.fromJS(data, {}, self);
+
+				// PROPERTIES
+				heading.selectMenuTextVal = ko.observable(self.CC_FIELD_LABEL());
+				heading.selectMenuIdVal = ko.observable(self.CC_FIELD_ID());
+				heading.acceptedHeading = ko.computed(function () {
+					return heading.selectMenuTextVal();
+				});
+
+				// EVENTS
+				self.selectionChanged = function(ko_evt, evt) {
+					var $selectedOption = $(evt.currentTarget).find("option:selected");
+					var fieldId = $selectedOption.attr("field-id");
+
+					heading.selectMenuIdVal(fieldId);
+				}
+
+				return heading;
+			}
+
+		/*
+		 * A collection of mls fields for a specific property
+		 * Properties: CC_FIELD_ID, VALUE, VENDOR_FIELD_KEY, VALID.ERRCODE, VALID.ISVALID
+		 */var Listing = function(data) {
+				var self = this;
+
+				var listing = ko.mapping.fromJS(data, {}, this);
+				listing.isError = ko.computed(function() {
+					return (listing.VALUE()) ? false : true;
+				});
+
+			    logit(listing);
+
+				return listing;
+			}
+
+		/*
+		 * View model for the entire ko view
+		 */var EditableTableVM = function () {
+				this.isEditable = ko.observable(false);
+
+				this.init();
+				this.load();
+			}
+
+			EditableTableVM.prototype.init = function() {
+				this.dataRepo = this.getData();
+				this.setMappings();
+			}
+
+			EditableTableVM.prototype.load = function() {
+				this.headings = ko.mapping.fromJS(this.dataRepo.HEADINGS, this.headMapping);
+				//this.listings = ko.mapping.fromJS(this.dataRepo.LISTINGS, this.listMapping);
+				this.listings = ko.observableArray([]);
+
+				for(var i = 0, j = this.dataRepo.LISTINGS.length; i < j; i++) {
+					var listing = this.dataRepo.LISTINGS[i];
+
+					this.listings.push(
+						ko.mapping.fromJS(listing, this.listMapping)
+					);
+				}
+
+				//console.log("this", ko.toJSON(this));
+
+				this.bindEvents();
+			}
+
+			// ko events
+			EditableTableVM.prototype.bindEvents = function() {
+				var self = this;
+
+				this.switchMode = function() {
+					if(self.isEditable()) {
+						self.isEditable(false);
+					}
+					else {
+						self.isEditable(true);
+					}
+				}
+
+				this.submit = function() {
+					var jsKo_Object = ko.mapping.toJS(self);
+
+					var headings = jsKo_Object.headings;
+					var listings = jsKo_Object.listings;
+
+					var headingValMap = self.mapHeading(listings);
+					var mappedListings = self.mapHeadingToListings(listings, headingValMap);
+
+					self.submitListings(mappedListings);
+				}
+			}
+
+			// Mapping for the ko mapping plugin
+			EditableTableVM.prototype.setMappings = function() {
+				this.headMapping = {
+					create: function (options) {
+						return new Heading(options.data);
+					}
+				};
+
+				this.listMapping = {
+					create: function (options) {
+						return new Listing(options.data);
+					}
+				};
+			}
+
+			//
+			EditableTableVM.prototype.getData = function() {
+				var rawData = '{"HEADINGS":[{"VENDOR_FIELD_NAME":"Address","CC_FIELD_LABEL":"Address","CC_FIELD_TYPE":"","CC_FIELD_LENGTH":300,"CC_IS_REQUIRED":true,"CC_FIELD_ID":1,"VENDOR_FIELD_KEY":"column3","CC_PATTERN":""},{"VENDOR_FIELD_NAME":"zip","CC_FIELD_LABEL":"ZipCode","CC_FIELD_TYPE":"","CC_FIELD_LENGTH":5,"CC_IS_REQUIRED":true,"CC_FIELD_ID":2,"VENDOR_FIELD_KEY":"column4","CC_PATTERN":"replace:[^0-9]"},{"VENDOR_FIELD_NAME":"SellingPrice","CC_FIELD_LABEL":"SalePrice","CC_FIELD_TYPE":"numeric","CC_FIELD_LENGTH":0,"CC_IS_REQUIRED":true,"CC_FIELD_ID":5,"VENDOR_FIELD_KEY":"column9","CC_PATTERN":""},{"VENDOR_FIELD_NAME":"DOM","CC_FIELD_LABEL":"DaysOnMarket(DOM)","CC_FIELD_TYPE":"numeric","CC_FIELD_LENGTH":0,"CC_IS_REQUIRED":true,"CC_FIELD_ID":6,"VENDOR_FIELD_KEY":"column11","CC_PATTERN":""},{"VENDOR_FIELD_NAME":"built","CC_FIELD_LABEL":"YearBuilt(Age)","CC_FIELD_TYPE":"numeric","CC_FIELD_LENGTH":0,"CC_IS_REQUIRED":true,"CC_FIELD_ID":7,"VENDOR_FIELD_KEY":"column8","CC_PATTERN":""},{"VENDOR_FIELD_NAME":"built","CC_FIELD_LABEL":"LivingSq.Ft.","CC_FIELD_TYPE":"numeric","CC_FIELD_LENGTH":0,"CC_IS_REQUIRED":false,"CC_FIELD_ID":11,"VENDOR_FIELD_KEY":"column8","CC_PATTERN":"replace:[^0-9]"},{"VENDOR_FIELD_NAME":"Bedrooms","CC_FIELD_LABEL":"Bedrooms","CC_FIELD_TYPE":"numeric","CC_FIELD_LENGTH":2,"CC_IS_REQUIRED":true,"CC_FIELD_ID":12,"VENDOR_FIELD_KEY":"column5","CC_PATTERN":""},{"VENDOR_FIELD_NAME":"Bathrooms-Full","CC_FIELD_LABEL":"Bathrooms","CC_FIELD_TYPE":"numeric","CC_FIELD_LENGTH":2,"CC_IS_REQUIRED":true,"CC_FIELD_ID":13,"VENDOR_FIELD_KEY":"column6","CC_PATTERN":""},{"VENDOR_FIELD_NAME":"Bathrooms-Half","CC_FIELD_LABEL":"HalfBaths","CC_FIELD_TYPE":"numeric","CC_FIELD_LENGTH":2,"CC_IS_REQUIRED":false,"CC_FIELD_ID":14,"VENDOR_FIELD_KEY":"column7","CC_PATTERN":""},{"VENDOR_FIELD_NAME":"ML_Number","CC_FIELD_LABEL":"MLS#","CC_FIELD_TYPE":"","CC_FIELD_LENGTH":50,"CC_IS_REQUIRED":true,"CC_FIELD_ID":19,"VENDOR_FIELD_KEY":"column1","CC_PATTERN":""},{"VENDOR_FIELD_NAME":"lot","CC_FIELD_LABEL":"LotSize","CC_FIELD_TYPE":"","CC_FIELD_LENGTH":0,"CC_IS_REQUIRED":false,"CC_FIELD_ID":20,"VENDOR_FIELD_KEY":"column2","CC_PATTERN":""},{"VENDOR_FIELD_NAME":"","CC_FIELD_LABEL":"ListingStatus","CC_FIELD_TYPE":"numeric","CC_FIELD_LENGTH":0,"CC_IS_REQUIRED":false,"CC_FIELD_ID":21,"VENDOR_FIELD_KEY":"","CC_PATTERN":""},{"VENDOR_FIELD_NAME":"SellingDate","CC_FIELD_LABEL":"SoldDate","CC_FIELD_TYPE":"date","CC_FIELD_LENGTH":0,"CC_IS_REQUIRED":true,"CC_FIELD_ID":22,"VENDOR_FIELD_KEY":"column10","CC_PATTERN":""},{"VENDOR_FIELD_NAME":"","CC_FIELD_LABEL":"Units","CC_FIELD_TYPE":"numeric","CC_FIELD_LENGTH":0,"CC_IS_REQUIRED":false,"CC_FIELD_ID":30,"VENDOR_FIELD_KEY":"","CC_PATTERN":"replace:[^0-9]"}],"LISTINGS":[[{"VALUE":337387,"CC_FIELD_ID":19,"VENDOR_FIELD_KEY":"column1","VALID":{"ERRCODE":"","ISVALID":true}},{"VALUE":"","CC_FIELD_ID":20,"VENDOR_FIELD_KEY":"column2","VALID":{"ERRCODE":"","ISVALID":true}},{"VALUE":"15244CarlisleRdCrittenden,KY41030-8203","CC_FIELD_ID":1,"VENDOR_FIELD_KEY":"column3","VALID":{"ERRCODE":"","ISVALID":true}},{"VALUE":41030,"CC_FIELD_ID":2,"VENDOR_FIELD_KEY":"column4","VALID":{"ERRCODE":"","ISVALID":true}},{"VALUE":3,"CC_FIELD_ID":12,"VENDOR_FIELD_KEY":"column5","VALID":{"ERRCODE":"","ISVALID":true}},{"VALUE":2,"CC_FIELD_ID":13,"VENDOR_FIELD_KEY":"column6","VALID":{"ERRCODE":"","ISVALID":true}},{"VALUE":0,"CC_FIELD_ID":14,"VENDOR_FIELD_KEY":"column7","VALID":{"ERRCODE":"","ISVALID":true}},{"VALUE":1995,"CC_FIELD_ID":7,"VENDOR_FIELD_KEY":"column8","VALID":{"ERRCODE":"","ISVALID":true}},{"VALUE":"55,000","CC_FIELD_ID":5,"VENDOR_FIELD_KEY":"column9","VALID":{"ERRCODE":"","ISVALID":true}},{"VALUE":"12\/29\/2006","CC_FIELD_ID":22,"VENDOR_FIELD_KEY":"column10","VALID":{"ERRCODE":"","ISVALID":true}},{"VALUE":28,"CC_FIELD_ID":6,"VENDOR_FIELD_KEY":"column11","VALID":{"ERRCODE":"","ISVALID":true}}],[{"VALUE":320835,"CC_FIELD_ID":19,"VENDOR_FIELD_KEY":"column1","VALID":{"ERRCODE":"","ISVALID":true}},{"VALUE":"","CC_FIELD_ID":20,"VENDOR_FIELD_KEY":"column2","VALID":{"ERRCODE":"","ISVALID":true}},{"VALUE":"165BarleyCirCrittenden,KY41030-8736","CC_FIELD_ID":1,"VENDOR_FIELD_KEY":"column3","VALID":{"ERRCODE":"","ISVALID":true}},{"VALUE":41030,"CC_FIELD_ID":2,"VENDOR_FIELD_KEY":"column4","VALID":{"ERRCODE":"","ISVALID":true}},{"VALUE":4,"CC_FIELD_ID":12,"VENDOR_FIELD_KEY":"column5","VALID":{"ERRCODE":"","ISVALID":true}},{"VALUE":2,"CC_FIELD_ID":13,"VENDOR_FIELD_KEY":"column6","VALID":{"ERRCODE":"","ISVALID":true}},{"VALUE":0,"CC_FIELD_ID":14,"VENDOR_FIELD_KEY":"column7","VALID":{"ERRCODE":"","ISVALID":true}},{"VALUE":2001,"CC_FIELD_ID":7,"VENDOR_FIELD_KEY":"column8","VALID":{"ERRCODE":"","ISVALID":true}},{"VALUE":"124,000","CC_FIELD_ID":5,"VENDOR_FIELD_KEY":"column9","VALID":{"ERRCODE":"","ISVALID":true}},{"VALUE":"9\/13\/2006","CC_FIELD_ID":22,"VENDOR_FIELD_KEY":"column10","VALID":{"ERRCODE":"","ISVALID":true}},{"VALUE":263,"CC_FIELD_ID":6,"VENDOR_FIELD_KEY":"column11","VALID":{"ERRCODE":"","ISVALID":true}}]]}';
+				return JSON.parse(rawData);
+			}
+
+			//
+			EditableTableVM.prototype.submitListings = function(mappedListings) {
+				console.log(mappedListings.length);
+				console.log(JSON.stringify(mappedListings));
+			}
+
+			// KO block required hand mapping
+			// Gets the values from the headings to map to the data
+			EditableTableVM.prototype.mapHeading = function() {
+				var fieldids = [];
+
+				var $theadTd = $("#mtr_editableTable .displayTable th").each(function() {
+					fieldids.push(
+						{
+							name: $(this).text(),
+							id: this.getAttribute("field-id")
+						}
+					);
+				});
+
+				return fieldids;
+			}
+
+			// KO block required hand mapping
+			// Maps the heading ids to the data fields
+			EditableTableVM.prototype.mapHeadingToListings = function(listings, map) {
+				var mappedFields = [];
+
+				for(var i = 0, j = listings.length; i < j; i++) {
+					var listing = listings[i].LISTING;
+
+					var mappedListing = [];
+
+					for(var k = 0, l = listing.length; k < l; k++) {
+						var field = listing[k];
+
+						field.CC_FIELD_ID = map[k].id;
+						field.VENDOR_FIELD_NAME = map[k].name;
+
+						mappedListing.push(field);
+					}
+
+					mappedFields.push(mappedListing);
+				}
+
+				return mappedFields;
+			}
+		</script>
+	</div>
+</body>
+</html>

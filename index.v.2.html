@@ -1,0 +1,107 @@
+<html>
+<head>
+	<title>Editable Table Testing</title>
+	<style type="text/css">
+		td input {
+			width: 75px;
+		}
+		.error input {
+			background-color: #F0CED7;
+			border: 1px solid #F1918D;
+		}
+	</style>
+</head>
+
+<body>
+	<div id="listings">
+		<div id="listingTable" data-bind="visible: !isEditView()">
+			<table>
+				<thead>
+					<tr data-bind="foreach: listingTableHeadings">
+						<th data-bind="text: name"></th>
+					</tr>
+				</thead>
+				<tbody data-bind="foreach: listings">
+					<tr>
+						<td class="msl" data-bind="text: mls"></td>
+						<td class="street" data-bind="text: street"></td>
+						<td class="zip" data-bind="text: zip"></td>
+						<td class="saleDate" data-bind="text: saleDate"></td>
+						<td class="bedCount" data-bind="text: bedCount"></td>
+						<td class="bathCount" data-bind="text: bathCount"></td>
+						<td class="yearBuilt" data-bind="text: yearBuilt"></td>
+						<td class="gla" data-bind="text: gla"></td>
+						<td class="dom" data-bind="text: dom"></td>
+						<td class="price" data-bind="text: formattedPrice"></td>
+					</tr>
+				</tbody>
+			</table>
+
+			<button data-bind="click: switchView">Edit</button>
+			<button data-bind="click: submit">Submit</button>
+		</div>
+
+		<div id="editablelistingTable" data-bind="visible: isEditView()">
+			<table>
+				<thead>
+					<tr data-bind="foreach: listingTableHeadings">
+						<th data-bind="attr: { validation: validationPattern}">
+							<select data-bind="value: name, optionsCaption: ' ', options: $root.headings"></select>
+						</th>
+					</tr>
+				</thead>
+				<tbody data-bind="foreach: listings">
+					<tr>
+						<td class="mls" data-bind="css: { error: !isValidMls() }">
+							<input name="input-mls" data-bind="value: validatedMls" />
+						</td>
+						<td class="street" data-bind="css: { error: !isValidStreet() }">
+							<input name="input-street" data-bind="value: validateStreet" />
+						</td>
+						<td class="zip" data-bind="css: { error: !isValidZip() }">
+							<input name="input-zip" data-bind="value: validateZip" />
+						</td>
+						<td class="saleDate" data-bind="css: { error: !isValidSaleDate() }">
+							<input name="input-saleDate" data-bind="value: validateSaleDate" />
+						</td>
+						<td class="bedCount" data-bind="css: { error: !isValidBedCount() }">
+							<input name="input-bedCount" data-bind="value: validateBedCount" />
+						</td>
+						<td class="bathCount" data-bind="css: { error: !isValidBathCount() }">
+							<input name="input-bathCount" data-bind="value: validateBathCount" />
+						</td>
+						<td class="yearBuilt" data-bind="css: { error: !isValidYearBuilt() }">
+							<input name="input-yearBuilt" data-bind="value: validateYearBuilt" />
+						</td>
+						<td class="gla" data-bind="css: { error: !isValidGla() }">
+							<input name="input-gla" data-bind="value: validateGla" />
+						</td>
+						<td class="dom" data-bind="css: { error: !isValidDom() }">
+							<input name="input-dom" data-bind="value: validateDom" />
+						</td>
+						<td class="price" data-bind="css: { error: !isValidPrice() }">
+							<input name="input-price" data-bind="value: validatePrice" />
+						</td>
+						<td>
+							<a href="javascript:void(0);" data-bind="click: $root.removeListing">Remove Listing</a>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+
+			<button data-bind="click: addListing">Add Entry</button>
+			<button data-bind="click: switchView">Save</button>
+		</div>
+	</div>
+
+	 <div id="scripts">
+		<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+		<script type="text/javascript" src="http://ajax.aspnetcdn.com/ajax/knockout/knockout-2.2.1.js"></script>
+		<script type="text/javascript">
+			$("document").ready(function(){
+				ko.applyBindings(new EditableTableVM(), document.getElementById("listings"));
+			});
+		</script>
+	</div>
+</body>
+</html>
